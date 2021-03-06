@@ -1,0 +1,3932 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<script>window.addEventListener('error', window.__err=function f(e){f.p=f.p||[];f.p.push(e)});</script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="Description" content="512549">
+
+<meta class="js-gtmID" data-gtmid="GTM-W8MVQXG">
+<link href="/static/css/stylesheet.css?version=2021-03-04t20-57-cbd2cebb4d0330ad6d0a142464ae820fee3cad73" rel="stylesheet">
+<link href="/third_party/dialog-polyfill/dialog-polyfill.css?version=2021-03-04t20-57-cbd2cebb4d0330ad6d0a142464ae820fee3cad73" rel="stylesheet">
+<title>strings · pkg.go.dev</title>
+
+  <link href="/static/css/unit.css?version=2021-03-04t20-57-cbd2cebb4d0330ad6d0a142464ae820fee3cad73" rel="stylesheet">
+  
+  <link href="/static/css/unit_details.css?version=2021-03-04t20-57-cbd2cebb4d0330ad6d0a142464ae820fee3cad73" rel="stylesheet">
+
+  <link href="/static/css/unit_outline.css?version=2021-03-04t20-57-cbd2cebb4d0330ad6d0a142464ae820fee3cad73" rel="stylesheet">
+
+<body class="Site Site--wide Site--redesign">
+<header class="Site-header Site-header--dark">
+  <div class="Banner">
+    <div class="Banner-inner">
+      <div class="Banner-message">Black Lives Matter</div>
+      <a class="Banner-action"
+         href="https://support.eji.org/give/153413/#!/donation/checkout"
+         target="_blank"
+         rel="noopener">Support the Equal Justice Initiative</a>
+    </div>
+  </div>
+  <div class="Header">
+    <nav class="Header-nav">
+      <a href="https://go.dev/" class="Header-logoLink">
+        <img class="Header-logo" src="/static/img/go-logo-white.svg" alt="Link to Go homepage">
+      </a>
+      
+  <form class="Header-searchForm" action="/search" role="search">
+    <button class="Header-searchFormSubmit" aria-label="Search for a package">
+      <svg class="Header-searchFormSubmitIcon" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path><path fill="none" d="M0 0h24v24H0z"></path></svg>
+    </button>
+    <input class="Header-searchFormInput js-searchFocus"
+      aria-label="Search for a package"
+      type="text"
+      name="q"
+      placeholder="Search for a package"
+      autocapitalize="off"
+      autocomplete="off"
+      autocorrect="off"
+      spellcheck="false"
+      title="Search for a package"
+      value=""
+      >
+  </form>
+
+      <ul class="Header-menu">
+        <li class="Header-menuItem">
+          <a href="https://go.dev/solutions" title="Why Go">Why Go</a>
+        </li>
+        <li class="Header-menuItem">
+          <a href="https://learn.go.dev" title="Getting Started">Getting Started</a>
+        </li>
+        <li class="Header-menuItem Header-menuItem--active">
+          <a href="/" title="Discover Packages">Discover Packages</a>
+        </li>
+        <li class="Header-menuItem">
+          <a href="https://go.dev/about" title="">About</a>
+        </li>
+      </ul>
+      <button class="Header-navOpen js-headerMenuButton" aria-label="Open navigation.">
+      </button>
+    </nav>
+  </div>
+</header>
+<aside class="NavigationDrawer js-header">
+  <nav class="NavigationDrawer-nav">
+    <div class="NavigationDrawer-header">
+      <a href="https://go.dev/">
+        <img class="NavigationDrawer-logo" src="/static/img/go-logo-blue.svg" alt="Go.">
+      </a>
+      <button class="NavigationDrawer-close js-headerMenuButton" aria-label="Close navigation.">
+      </button>
+    </div>
+    <ul class="NavigationDrawer-list">
+      <li class="NavigationDrawer-listItem">
+        <a href="https://go.dev/solutions" title="Why Go">Why Go</a>
+      </li>
+      <li class="NavigationDrawer-listItem">
+        <a href="https://learn.go.dev" title="Getting Started">Getting Started</a>
+      </li>
+      <li class="NavigationDrawer-listItem NavigationDrawer-listItem--active">
+        <a href="/" title="Discover Packages">Discover Packages</a>
+      </li>
+      <li class="NavigationDrawer-listItem">
+        <a href="https://go.dev/about" title="">About</a>
+      </li>
+      <li class="NavigationDrawer-listItem">
+        <a href="https://golang.org" title="golang.org">golang.org</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+<div class="NavigationDrawer-scrim js-scrim" role="presentation">
+</div>
+<div class="Site-content">
+  <div class="Container">
+    
+  <header class="UnitHeader" role="complementary"
+      aria-label="package strings information">
+    <div class="UnitHeader-container">
+      <div class="UnitHeader-breadcrumb" data-test-id="UnitHeader-breadcrumb">
+        
+          
+            <span class="UnitHeader-breadcrumbItem" data-test-id="UnitHeader-breadcrumbItem">
+              <a href="/">Discover Packages</a>
+            </span>
+          
+            <span class="UnitHeader-breadcrumbItem" data-test-id="UnitHeader-breadcrumbItem">
+              <a href="/std">Standard library</a>
+            </span>
+          
+          <span class="UnitHeader-breadcrumbItem">
+            <span data-test-id="UnitHeader-breadcrumbCurrent">strings</span>
+            
+              <button class="CopyToClipboardButton js-copyToClipboard"
+                  title="Copy path to clipboard.&#10;&#10;strings"
+                  data-to-copy="strings"
+                  tabindex="-1">
+                <img class="CopyToClipboardButton-image" src="/static/img/copy-click.svg" alt="">
+              </button>
+            
+          </span>
+        
+      </div>
+      <div class="UnitHeader-heading">
+        <h1 class="UnitHeader-title" data-test-id="UnitHeader-title">
+          strings
+        </h1>
+        
+          <span class="UnitHeader-badge">package</span>
+        
+          <span class="UnitHeader-badge">standard library</span>
+        
+      </div>
+      
+
+     
+      
+      <div class="js-fixedHeaderSentinel"></div>
+      
+        <div class="UnitHeader-detail">
+
+          <span class="UnitHeader-detailItem" data-test-id="UnitHeader-version">
+            <img class="UnitHeader-detailItemLarge" height="16px" width="16px" src="/static/img/pkg-icon-arrowBranch_16x16.svg" alt="">
+            <a href="?tab=versions">Version go1.16</a>
+            
+            <div class="DetailsHeader-badge DetailsHeader-badge--latest"
+                data-test-id="UnitHeader-minorVersionBanner"
+                data-version="go1.16"
+                data-mpath="std"
+                data-ppath="strings"
+                data-pagetype="package">
+              <span class="DetailsHeader-span--latest">Latest</span>
+              
+                <span class="DetailsHeader-span--notAtLatest">
+                    Latest
+                    
+  <span class="UnitMetaDetails-toggletip">
+    <button type="button" aria-label="more info" data-toggletip-content="This package is not in the latest version of its module.">
+      <img src="/static/img/severity.svg" alt="" height="14" width="15">
+    </button>
+    <span role="status"></span>
+  </span>
+
+                </span>
+              
+              <a href="/strings">Go to latest</a>
+            </div>
+          </span>
+
+          <span class="UnitHeader-detailItem" data-test-id="UnitHeader-commitTime">
+            <img height="16px" width="16px" src="/static/img/pkg-icon-circularArrows_16x16.svg" alt="">
+            Feb 16, 2021
+          </span>
+          <span class="UnitHeader-detailItem UnitHeader-scaleIcon" data-test-id="UnitHeader-licenses">
+            <img height="16px" width="16px" src="/static/img/pkg-icon-scale_16x16.svg" alt=""><a href="/strings?tab=licenses" data-test-id="UnitHeader-license">BSD-3-Clause</a>
+              
+            
+          </span>
+          
+            <span class="UnitHeader-detailItem" data-test-id="UnitHeader-imports">
+              <img height="16px" width="16px" src="/static/img/pkg-icon-boxClosed_16x16.svg" alt="">
+              <a href="/strings?tab=imports">
+                7 <span>Imports</span>
+              </a>
+            </span>
+            <span class="UnitHeader-detailItem" data-test-id="UnitHeader-importedby">
+              <img height="16px" width="16px" src="/static/img/pkg-icon-boxClosed_16x16.svg" alt="">
+              <a href="/strings?tab=importedby">
+                512549 <span>Imported by</span>
+              </a>
+            </span>
+          
+        </div>
+      
+    </div>
+  </header>
+
+    
+  <div class="UnitFixedHeader js-fixedHeader" aria-hidden="true">
+    <div class="UnitFixedHeader-container">
+      <a href="https://go.dev/" class="UnitFixedHeader-logoLink" tabindex="-1">
+        <img class="UnitFixedHeader-logo" src="/static/img/go-logo-blue.svg" alt="Go">
+      </a>
+      <div class="UnitFixedHeader-moduleInfo">
+        <span class="UnitFixedHeader-title">
+          
+            <span class="UnitFixedHeader-titleName">strings</span>
+          
+        </span>
+        
+          
+            <button class="CopyToClipboardButton js-copyToClipboard"
+                title="Copy path to clipboard.&#10;&#10;strings"
+                data-to-copy="strings"
+                tabindex="-1">
+              <img class="CopyToClipboardButton-image" src="/static/img/copy-click.svg" alt="">
+            </button>
+          
+        
+      </div>
+      <div class="UnitFixedHeader-overflowingTabList">
+        
+          <div class="UnitHeaderFixed-detail">
+            <span class="UnitHeaderFixed-detailItem UnitHeaderFixed-detailItem--md">
+              <img height="16px" width="16px" src="/static/img/pkg-icon-arrowBranch_16x16.svg" alt="">
+              <a href="?tab=versions" tabindex="-1">Version go1.16</a>
+              
+              <div class="DetailsHeader-badge DetailsHeader-badge--latest"
+                   data-version="go1.16" data-mpath="std" data-ppath="strings" data-pagetype="package">
+
+                <span>Latest</span>
+                <a href="/strings">Go to latest</a>
+              </div>
+            </span>
+            <span class="UnitHeaderFixed-detailItem UnitHeaderFixed-detailItem--md">
+              <img height="16px" width="16px" src="/static/img/pkg-icon-circularArrows_16x16.svg" alt="">
+              Feb 16, 2021
+            </span>
+            <span class="UnitHeaderFixed-detailItem UnitHeaderFixed-detailItem--md">
+              <img height="16px" width="16px" src="/static/img/pkg-icon-scale_16x16.svg" alt=""><a href="/strings?tab=licenses" tabindex="-1">BSD-3-Clause</a>
+              
+            </span>
+            
+              <span class="UnitHeaderFixed-detailItem UnitHeaderFixed-detailItem--lg">
+                <img height="16px" width="16px" src="/static/img/pkg-icon-boxClosed_16x16.svg" alt="">
+                <a href="/strings?tab=imports" tabindex="-1">
+                  7 <span>Imports</span>
+                </a>
+              </span>
+              <span class="UnitHeaderFixed-detailItem UnitHeaderFixed-detailItem--lg">
+                <img height="16px" width="16px" src="/static/img/pkg-icon-boxClosed_16x16.svg" alt="">
+                <a href="/strings?tab=importedby" tabindex="-1">
+                  512549 <span>Imported by</span>
+                </a>
+              </span>
+            
+          </div>
+          <div class="UnitFixedHeader-overflowContainer">
+            <svg class="UnitFixedHeader-overflowImage" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"/>
+              <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+            </svg>
+            <select class="UnitFixedHeader-overflowSelect js-overflowSelect" tabindex="-1">
+              <option>Main</option>
+              <option value="/strings?tab=versions">
+                Versions
+              </option>
+              <option value="/strings?tab=licenses">
+                Licenses
+              </option>
+              
+                <option value="/strings?tab=imports">
+                  Imports
+                </option>
+                <option value="/strings?tab=importedby">
+                  Imported By
+                </option>
+              
+            </select>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+    
+  <div class="UnitDetails" data-test-id="UnitDetails">
+    
+<nav class="DocNavMobile js-mobileNav">
+  <label for="DocNavMobile-select" class="DocNavMobile-label">
+    <svg class="DocNavMobile-selectIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px">
+      <path d="M0 0h24v24H0z" fill="none"/><path d="M3 9h14V7H3v2zm0 4h14v-2H3v2zm0 4h14v-2H3v2zm16 0h2v-2h-2v2zm0-10v2h2V7h-2zm0 6h2v-2h-2v2z"/>
+    </svg>
+    <span class="DocNavMobile-selectText js-mobileNavSelectText">Outline</span>
+  </label>
+  <select id="DocNavMobile-select" class="DocNavMobile-select">
+    <option value="">Outline</option>
+    <option class="js-readmeOption" value="section-readme">README</option>
+    <optgroup label="Documentation">
+      
+        <option value="pkg-overview">Overview</option>
+      
+      
+        <option value="pkg-index">Index</option>
+      
+      
+        <option value="pkg-examples">Examples</option>
+      
+      
+      
+    </optgroup>
+    
+      <optgroup label="Functions">
+        
+          <option value="Compare">Compare(a, b)</option>
+        
+          <option value="Contains">Contains(s, substr)</option>
+        
+          <option value="ContainsAny">ContainsAny(s, chars)</option>
+        
+          <option value="ContainsRune">ContainsRune(s, r)</option>
+        
+          <option value="Count">Count(s, substr)</option>
+        
+          <option value="EqualFold">EqualFold(s, t)</option>
+        
+          <option value="Fields">Fields(s)</option>
+        
+          <option value="FieldsFunc">FieldsFunc(s, f)</option>
+        
+          <option value="HasPrefix">HasPrefix(s, prefix)</option>
+        
+          <option value="HasSuffix">HasSuffix(s, suffix)</option>
+        
+          <option value="Index">Index(s, substr)</option>
+        
+          <option value="IndexAny">IndexAny(s, chars)</option>
+        
+          <option value="IndexByte">IndexByte(s, c)</option>
+        
+          <option value="IndexFunc">IndexFunc(s, f)</option>
+        
+          <option value="IndexRune">IndexRune(s, r)</option>
+        
+          <option value="Join">Join(elems, sep)</option>
+        
+          <option value="LastIndex">LastIndex(s, substr)</option>
+        
+          <option value="LastIndexAny">LastIndexAny(s, chars)</option>
+        
+          <option value="LastIndexByte">LastIndexByte(s, c)</option>
+        
+          <option value="LastIndexFunc">LastIndexFunc(s, f)</option>
+        
+          <option value="Map">Map(mapping, s)</option>
+        
+          <option value="Repeat">Repeat(s, count)</option>
+        
+          <option value="Replace">Replace(s, old, new, n)</option>
+        
+          <option value="ReplaceAll">ReplaceAll(s, old, new)</option>
+        
+          <option value="Split">Split(s, sep)</option>
+        
+          <option value="SplitAfter">SplitAfter(s, sep)</option>
+        
+          <option value="SplitAfterN">SplitAfterN(s, sep, n)</option>
+        
+          <option value="SplitN">SplitN(s, sep, n)</option>
+        
+          <option value="Title">Title(s)</option>
+        
+          <option value="ToLower">ToLower(s)</option>
+        
+          <option value="ToLowerSpecial">ToLowerSpecial(c, s)</option>
+        
+          <option value="ToTitle">ToTitle(s)</option>
+        
+          <option value="ToTitleSpecial">ToTitleSpecial(c, s)</option>
+        
+          <option value="ToUpper">ToUpper(s)</option>
+        
+          <option value="ToUpperSpecial">ToUpperSpecial(c, s)</option>
+        
+          <option value="ToValidUTF8">ToValidUTF8(s, replacement)</option>
+        
+          <option value="Trim">Trim(s, cutset)</option>
+        
+          <option value="TrimFunc">TrimFunc(s, f)</option>
+        
+          <option value="TrimLeft">TrimLeft(s, cutset)</option>
+        
+          <option value="TrimLeftFunc">TrimLeftFunc(s, f)</option>
+        
+          <option value="TrimPrefix">TrimPrefix(s, prefix)</option>
+        
+          <option value="TrimRight">TrimRight(s, cutset)</option>
+        
+          <option value="TrimRightFunc">TrimRightFunc(s, f)</option>
+        
+          <option value="TrimSpace">TrimSpace(s)</option>
+        
+          <option value="TrimSuffix">TrimSuffix(s, suffix)</option>
+        
+      </optgroup>
+    
+    
+      <optgroup label="Types">
+        
+          
+          <option value="Builder">type Builder</option>
+          
+          
+            <option value="Builder.Cap">(b) Cap()</option>
+          
+            <option value="Builder.Grow">(b) Grow(n)</option>
+          
+            <option value="Builder.Len">(b) Len()</option>
+          
+            <option value="Builder.Reset">(b) Reset()</option>
+          
+            <option value="Builder.String">(b) String()</option>
+          
+            <option value="Builder.Write">(b) Write(p)</option>
+          
+            <option value="Builder.WriteByte">(b) WriteByte(c)</option>
+          
+            <option value="Builder.WriteRune">(b) WriteRune(r)</option>
+          
+            <option value="Builder.WriteString">(b) WriteString(s)</option>
+          
+        
+          
+          <option value="Reader">type Reader</option>
+          
+            <option value="NewReader">NewReader(s)</option>
+          
+          
+            <option value="Reader.Len">(r) Len()</option>
+          
+            <option value="Reader.Read">(r) Read(b)</option>
+          
+            <option value="Reader.ReadAt">(r) ReadAt(b, off)</option>
+          
+            <option value="Reader.ReadByte">(r) ReadByte()</option>
+          
+            <option value="Reader.ReadRune">(r) ReadRune()</option>
+          
+            <option value="Reader.Reset">(r) Reset(s)</option>
+          
+            <option value="Reader.Seek">(r) Seek(offset, whence)</option>
+          
+            <option value="Reader.Size">(r) Size()</option>
+          
+            <option value="Reader.UnreadByte">(r) UnreadByte()</option>
+          
+            <option value="Reader.UnreadRune">(r) UnreadRune()</option>
+          
+            <option value="Reader.WriteTo">(r) WriteTo(w)</option>
+          
+        
+          
+          <option value="Replacer">type Replacer</option>
+          
+            <option value="NewReplacer">NewReplacer(oldnew)</option>
+          
+          
+            <option value="Replacer.Replace">(r) Replace(s)</option>
+          
+            <option value="Replacer.WriteString">(r) WriteString(w, s)</option>
+          
+         
+      </optgroup>
+    
+    
+      <optgroup label="Notes">
+        
+          <option value="pkg-note-BUG">Bugs</option>
+        
+      </optgroup>
+    
+    <option class="js-sourcefilesOption" value="section-sourcefiles">Source Files</option>
+    <option class="js-directoriesOption" value="section-directories">Directories</option>
+  </select>
+</nav>
+
+    <div class="UnitDetails-outline" role="navigation"
+        aria-label="packagedetails navigation">
+      
+  <div class="UnitOutline">
+    <div class="UnitOutline-jumpTo">
+      <button class="UnitOutline-jumpToInput js-jumpToInput">
+        Jump to ...
+      </button>
+    </div>
+    <ul class="js-tree" role="tree" aria-label="Outline">
+      
+      
+        <li role="none">
+          <a href="#section-documentation" role="treeitem" aria-expanded="false" aria-level="1"
+              aria-selected="false"aria-owns="doc-outline" tabindex="-1">
+            Documentation
+          </a>
+          
+<ul role="group" id="doc-outline">
+  
+    <li role="none">
+      <a href="#pkg-overview" role="treeitem" aria-level="2" tabindex="-1">Overview</a>
+    </li>
+  <li class="DocNav-overview" role="none">
+      <a href="#pkg-index" role="treeitem" aria-level="2" tabindex="-1" aria-owns="nav-group-index"
+           aria-expanded="false">
+        Index
+      </a>
+      
+        <ul role="group" id="nav-group-index">
+          <li role="none">
+            <a href="#pkg-examples" role="treeitem" aria-level="3" tabindex="-1">Examples</a>
+          </li>
+        </ul>
+      
+    </li>
+    <li class="DocNav-constants" role="none">
+      <a href="#pkg-constants" role="treeitem" aria-level="2" tabindex="-1">Constants</a>
+    </li>
+    <li class="DocNav-variables" role="none">
+      <a href="#pkg-variables" role="treeitem" aria-level="2" tabindex="-1">Variables</a>
+    </li>
+    <li class="DocNav-functions" role="none">
+      <a href="#pkg-functions" role="treeitem" aria-level="2" tabindex="-1" aria-owns="nav-group-functions"
+           aria-expanded="false">
+        Functions
+      </a>
+      <ul role="group" id="nav-group-functions">
+        
+          <li role="none">
+            <a href="#Compare" role="treeitem" aria-level="3" tabindex="-1"
+                 title="Compare(a, b)">
+              Compare(a, b)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#Contains" role="treeitem" aria-level="3" tabindex="-1"
+                 title="Contains(s, substr)">
+              Contains(s, substr)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#ContainsAny" role="treeitem" aria-level="3" tabindex="-1"
+                 title="ContainsAny(s, chars)">
+              ContainsAny(s, chars)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#ContainsRune" role="treeitem" aria-level="3" tabindex="-1"
+                 title="ContainsRune(s, r)">
+              ContainsRune(s, r)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#Count" role="treeitem" aria-level="3" tabindex="-1"
+                 title="Count(s, substr)">
+              Count(s, substr)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#EqualFold" role="treeitem" aria-level="3" tabindex="-1"
+                 title="EqualFold(s, t)">
+              EqualFold(s, t)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#Fields" role="treeitem" aria-level="3" tabindex="-1"
+                 title="Fields(s)">
+              Fields(s)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#FieldsFunc" role="treeitem" aria-level="3" tabindex="-1"
+                 title="FieldsFunc(s, f)">
+              FieldsFunc(s, f)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#HasPrefix" role="treeitem" aria-level="3" tabindex="-1"
+                 title="HasPrefix(s, prefix)">
+              HasPrefix(s, prefix)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#HasSuffix" role="treeitem" aria-level="3" tabindex="-1"
+                 title="HasSuffix(s, suffix)">
+              HasSuffix(s, suffix)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#Index" role="treeitem" aria-level="3" tabindex="-1"
+                 title="Index(s, substr)">
+              Index(s, substr)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#IndexAny" role="treeitem" aria-level="3" tabindex="-1"
+                 title="IndexAny(s, chars)">
+              IndexAny(s, chars)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#IndexByte" role="treeitem" aria-level="3" tabindex="-1"
+                 title="IndexByte(s, c)">
+              IndexByte(s, c)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#IndexFunc" role="treeitem" aria-level="3" tabindex="-1"
+                 title="IndexFunc(s, f)">
+              IndexFunc(s, f)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#IndexRune" role="treeitem" aria-level="3" tabindex="-1"
+                 title="IndexRune(s, r)">
+              IndexRune(s, r)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#Join" role="treeitem" aria-level="3" tabindex="-1"
+                 title="Join(elems, sep)">
+              Join(elems, sep)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#LastIndex" role="treeitem" aria-level="3" tabindex="-1"
+                 title="LastIndex(s, substr)">
+              LastIndex(s, substr)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#LastIndexAny" role="treeitem" aria-level="3" tabindex="-1"
+                 title="LastIndexAny(s, chars)">
+              LastIndexAny(s, chars)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#LastIndexByte" role="treeitem" aria-level="3" tabindex="-1"
+                 title="LastIndexByte(s, c)">
+              LastIndexByte(s, c)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#LastIndexFunc" role="treeitem" aria-level="3" tabindex="-1"
+                 title="LastIndexFunc(s, f)">
+              LastIndexFunc(s, f)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#Map" role="treeitem" aria-level="3" tabindex="-1"
+                 title="Map(mapping, s)">
+              Map(mapping, s)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#Repeat" role="treeitem" aria-level="3" tabindex="-1"
+                 title="Repeat(s, count)">
+              Repeat(s, count)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#Replace" role="treeitem" aria-level="3" tabindex="-1"
+                 title="Replace(s, old, new, n)">
+              Replace(s, old, new, n)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#ReplaceAll" role="treeitem" aria-level="3" tabindex="-1"
+                 title="ReplaceAll(s, old, new)">
+              ReplaceAll(s, old, new)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#Split" role="treeitem" aria-level="3" tabindex="-1"
+                 title="Split(s, sep)">
+              Split(s, sep)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#SplitAfter" role="treeitem" aria-level="3" tabindex="-1"
+                 title="SplitAfter(s, sep)">
+              SplitAfter(s, sep)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#SplitAfterN" role="treeitem" aria-level="3" tabindex="-1"
+                 title="SplitAfterN(s, sep, n)">
+              SplitAfterN(s, sep, n)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#SplitN" role="treeitem" aria-level="3" tabindex="-1"
+                 title="SplitN(s, sep, n)">
+              SplitN(s, sep, n)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#Title" role="treeitem" aria-level="3" tabindex="-1"
+                 title="Title(s)">
+              Title(s)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#ToLower" role="treeitem" aria-level="3" tabindex="-1"
+                 title="ToLower(s)">
+              ToLower(s)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#ToLowerSpecial" role="treeitem" aria-level="3" tabindex="-1"
+                 title="ToLowerSpecial(c, s)">
+              ToLowerSpecial(c, s)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#ToTitle" role="treeitem" aria-level="3" tabindex="-1"
+                 title="ToTitle(s)">
+              ToTitle(s)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#ToTitleSpecial" role="treeitem" aria-level="3" tabindex="-1"
+                 title="ToTitleSpecial(c, s)">
+              ToTitleSpecial(c, s)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#ToUpper" role="treeitem" aria-level="3" tabindex="-1"
+                 title="ToUpper(s)">
+              ToUpper(s)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#ToUpperSpecial" role="treeitem" aria-level="3" tabindex="-1"
+                 title="ToUpperSpecial(c, s)">
+              ToUpperSpecial(c, s)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#ToValidUTF8" role="treeitem" aria-level="3" tabindex="-1"
+                 title="ToValidUTF8(s, replacement)">
+              ToValidUTF8(s, replacement)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#Trim" role="treeitem" aria-level="3" tabindex="-1"
+                 title="Trim(s, cutset)">
+              Trim(s, cutset)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#TrimFunc" role="treeitem" aria-level="3" tabindex="-1"
+                 title="TrimFunc(s, f)">
+              TrimFunc(s, f)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#TrimLeft" role="treeitem" aria-level="3" tabindex="-1"
+                 title="TrimLeft(s, cutset)">
+              TrimLeft(s, cutset)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#TrimLeftFunc" role="treeitem" aria-level="3" tabindex="-1"
+                 title="TrimLeftFunc(s, f)">
+              TrimLeftFunc(s, f)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#TrimPrefix" role="treeitem" aria-level="3" tabindex="-1"
+                 title="TrimPrefix(s, prefix)">
+              TrimPrefix(s, prefix)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#TrimRight" role="treeitem" aria-level="3" tabindex="-1"
+                 title="TrimRight(s, cutset)">
+              TrimRight(s, cutset)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#TrimRightFunc" role="treeitem" aria-level="3" tabindex="-1"
+                 title="TrimRightFunc(s, f)">
+              TrimRightFunc(s, f)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#TrimSpace" role="treeitem" aria-level="3" tabindex="-1"
+                 title="TrimSpace(s)">
+              TrimSpace(s)
+            </a>
+          </li>
+        
+          <li role="none">
+            <a href="#TrimSuffix" role="treeitem" aria-level="3" tabindex="-1"
+                 title="TrimSuffix(s, suffix)">
+              TrimSuffix(s, suffix)
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+    <li class="DocNav-types" role="none">
+      <a href="#pkg-types" role="treeitem" aria-level="2" tabindex="-1" aria-owns="nav-group-types"
+           aria-expanded="false">
+        Types
+      </a>
+      <ul role="group" id="nav-group-types">
+        
+          
+          <li role="none">
+            
+              
+              
+              <a href="#Builder" role="treeitem" aria-expanded="false" aria-level="3" tabindex="-1"
+                   data-aria-owns="nav.group.Builder">
+                type Builder
+              </a>
+              <ul role="group" id="nav.group.Builder">
+                
+                
+                  <li role="none">
+                    <a href="#Builder.Cap" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(b) Cap()">
+                      (b) Cap()
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Builder.Grow" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(b) Grow(n)">
+                      (b) Grow(n)
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Builder.Len" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(b) Len()">
+                      (b) Len()
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Builder.Reset" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(b) Reset()">
+                      (b) Reset()
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Builder.String" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(b) String()">
+                      (b) String()
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Builder.Write" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(b) Write(p)">
+                      (b) Write(p)
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Builder.WriteByte" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(b) WriteByte(c)">
+                      (b) WriteByte(c)
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Builder.WriteRune" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(b) WriteRune(r)">
+                      (b) WriteRune(r)
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Builder.WriteString" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(b) WriteString(s)">
+                      (b) WriteString(s)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li role="none">
+            
+              
+              
+              <a href="#Reader" role="treeitem" aria-expanded="false" aria-level="3" tabindex="-1"
+                   data-aria-owns="nav.group.Reader">
+                type Reader
+              </a>
+              <ul role="group" id="nav.group.Reader">
+                
+                  <li role="none">
+                    <a href="#NewReader" role="treeitem" aria-level="4" tabindex="-1"
+                        title="NewReader(s)">
+                      NewReader(s)
+                    </a>
+                  </li>
+                
+                
+                  <li role="none">
+                    <a href="#Reader.Len" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) Len()">
+                      (r) Len()
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Reader.Read" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) Read(b)">
+                      (r) Read(b)
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Reader.ReadAt" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) ReadAt(b, off)">
+                      (r) ReadAt(b, off)
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Reader.ReadByte" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) ReadByte()">
+                      (r) ReadByte()
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Reader.ReadRune" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) ReadRune()">
+                      (r) ReadRune()
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Reader.Reset" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) Reset(s)">
+                      (r) Reset(s)
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Reader.Seek" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) Seek(offset, whence)">
+                      (r) Seek(offset, whence)
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Reader.Size" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) Size()">
+                      (r) Size()
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Reader.UnreadByte" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) UnreadByte()">
+                      (r) UnreadByte()
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Reader.UnreadRune" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) UnreadRune()">
+                      (r) UnreadRune()
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Reader.WriteTo" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) WriteTo(w)">
+                      (r) WriteTo(w)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li role="none">
+            
+              
+              
+              <a href="#Replacer" role="treeitem" aria-expanded="false" aria-level="3" tabindex="-1"
+                   data-aria-owns="nav.group.Replacer">
+                type Replacer
+              </a>
+              <ul role="group" id="nav.group.Replacer">
+                
+                  <li role="none">
+                    <a href="#NewReplacer" role="treeitem" aria-level="4" tabindex="-1"
+                        title="NewReplacer(oldnew)">
+                      NewReplacer(oldnew)
+                    </a>
+                  </li>
+                
+                
+                  <li role="none">
+                    <a href="#Replacer.Replace" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) Replace(s)">
+                      (r) Replace(s)
+                    </a>
+                  </li>
+                
+                  <li role="none">
+                    <a href="#Replacer.WriteString" role="treeitem" aria-level="4" tabindex="-1"
+                        title="(r) WriteString(w, s)">
+                      (r) WriteString(w, s)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+         
+      </ul>
+    </li>
+  
+  
+    <li class="DocNav-notes" role="none">
+      <a href="#pkg-notes" role="treeitem" aria-expanded="false" aria-level="2" tabindex="-1"
+           aria-owns="nav-group-notes">
+        Notes
+      </a>
+      <ul role="group" id="nav-group-notes">
+        
+          <li role="none">
+            <a href="#pkg-note-BUG" role="treeitem" aria-level="3" tabindex="-1">
+              Bugs
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+</ul>
+
+        </li>
+      
+      
+        <li role="none">
+          <a href="#section-sourcefiles" role="treeitem" aria-expanded="false"
+              aria-selected="false" aria-level="1" tabindex="-1">
+            Source Files
+          </a>
+        </li>
+      
+      
+    </ul>
+  </div>
+
+    </div>
+    <div class="UnitDetails-content js-unitDetailsContent" role="main" data-test-id="UnitDetails-content">
+      
+
+      
+        
+          
+  <div class="UnitDoc">
+    <h2 class="UnitDoc-title" id="section-documentation">
+      <img height="25px" width="20px" src="/static/img/pkg-icon-doc_20x12.svg" alt="">Documentation
+    </h2>
+    <div class="Documentation js-documentation">
+      
+        
+<div class="Documentation-content js-docContent"> <section class="Documentation-overview">
+    <h3 tabindex="-1" id="pkg-overview" class="Documentation-overviewHeader">Overview <a href="#pkg-overview">¶</a></h3>
+
+<div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Package strings implements simple functions to manipulate UTF-8 encoded strings.
+</p><p>For information about UTF-8 strings in Go, see <a href="https://blog.golang.org/strings">https://blog.golang.org/strings</a>.
+</p>
+</section><section class="Documentation-index">
+    <h3 id="pkg-index" class="Documentation-indexHeader">Index <a href="#pkg-index">¶</a></h3>
+
+<ul class="Documentation-indexList">
+<li class="Documentation-indexFunction">
+        <a href="#Compare">func Compare(a, b string) int</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#Contains">func Contains(s, substr string) bool</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#ContainsAny">func ContainsAny(s, chars string) bool</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#ContainsRune">func ContainsRune(s string, r rune) bool</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#Count">func Count(s, substr string) int</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#EqualFold">func EqualFold(s, t string) bool</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#Fields">func Fields(s string) []string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#FieldsFunc">func FieldsFunc(s string, f func(rune) bool) []string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#HasPrefix">func HasPrefix(s, prefix string) bool</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#HasSuffix">func HasSuffix(s, suffix string) bool</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#Index">func Index(s, substr string) int</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#IndexAny">func IndexAny(s, chars string) int</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#IndexByte">func IndexByte(s string, c byte) int</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#IndexFunc">func IndexFunc(s string, f func(rune) bool) int</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#IndexRune">func IndexRune(s string, r rune) int</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#Join">func Join(elems []string, sep string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#LastIndex">func LastIndex(s, substr string) int</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#LastIndexAny">func LastIndexAny(s, chars string) int</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#LastIndexByte">func LastIndexByte(s string, c byte) int</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#LastIndexFunc">func LastIndexFunc(s string, f func(rune) bool) int</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#Map">func Map(mapping func(rune) rune, s string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#Repeat">func Repeat(s string, count int) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#Replace">func Replace(s, old, new string, n int) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#ReplaceAll">func ReplaceAll(s, old, new string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#Split">func Split(s, sep string) []string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#SplitAfter">func SplitAfter(s, sep string) []string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#SplitAfterN">func SplitAfterN(s, sep string, n int) []string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#SplitN">func SplitN(s, sep string, n int) []string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#Title">func Title(s string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#ToLower">func ToLower(s string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#ToLowerSpecial">func ToLowerSpecial(c unicode.SpecialCase, s string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#ToTitle">func ToTitle(s string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#ToTitleSpecial">func ToTitleSpecial(c unicode.SpecialCase, s string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#ToUpper">func ToUpper(s string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#ToUpperSpecial">func ToUpperSpecial(c unicode.SpecialCase, s string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#ToValidUTF8">func ToValidUTF8(s, replacement string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#Trim">func Trim(s, cutset string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#TrimFunc">func TrimFunc(s string, f func(rune) bool) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#TrimLeft">func TrimLeft(s, cutset string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#TrimLeftFunc">func TrimLeftFunc(s string, f func(rune) bool) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#TrimPrefix">func TrimPrefix(s, prefix string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#TrimRight">func TrimRight(s, cutset string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#TrimRightFunc">func TrimRightFunc(s string, f func(rune) bool) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#TrimSpace">func TrimSpace(s string) string</a>
+      </li>
+<li class="Documentation-indexFunction">
+        <a href="#TrimSuffix">func TrimSuffix(s, suffix string) string</a>
+      </li>
+<li class="Documentation-indexType"><a href="#Builder">type Builder</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li><a href="#Builder.Cap">func (b *Builder) Cap() int</a></li>
+<li><a href="#Builder.Grow">func (b *Builder) Grow(n int)</a></li>
+<li><a href="#Builder.Len">func (b *Builder) Len() int</a></li>
+<li><a href="#Builder.Reset">func (b *Builder) Reset()</a></li>
+<li><a href="#Builder.String">func (b *Builder) String() string</a></li>
+<li><a href="#Builder.Write">func (b *Builder) Write(p []byte) (int, error)</a></li>
+<li><a href="#Builder.WriteByte">func (b *Builder) WriteByte(c byte) error</a></li>
+<li><a href="#Builder.WriteRune">func (b *Builder) WriteRune(r rune) (int, error)</a></li>
+<li><a href="#Builder.WriteString">func (b *Builder) WriteString(s string) (int, error)</a></li>
+
+          </ul></li>
+<li class="Documentation-indexType"><a href="#Reader">type Reader</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li><a href="#NewReader">func NewReader(s string) *Reader</a></li>
+
+          </ul></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li><a href="#Reader.Len">func (r *Reader) Len() int</a></li>
+<li><a href="#Reader.Read">func (r *Reader) Read(b []byte) (n int, err error)</a></li>
+<li><a href="#Reader.ReadAt">func (r *Reader) ReadAt(b []byte, off int64) (n int, err error)</a></li>
+<li><a href="#Reader.ReadByte">func (r *Reader) ReadByte() (byte, error)</a></li>
+<li><a href="#Reader.ReadRune">func (r *Reader) ReadRune() (ch rune, size int, err error)</a></li>
+<li><a href="#Reader.Reset">func (r *Reader) Reset(s string)</a></li>
+<li><a href="#Reader.Seek">func (r *Reader) Seek(offset int64, whence int) (int64, error)</a></li>
+<li><a href="#Reader.Size">func (r *Reader) Size() int64</a></li>
+<li><a href="#Reader.UnreadByte">func (r *Reader) UnreadByte() error</a></li>
+<li><a href="#Reader.UnreadRune">func (r *Reader) UnreadRune() error</a></li>
+<li><a href="#Reader.WriteTo">func (r *Reader) WriteTo(w io.Writer) (n int64, err error)</a></li>
+
+          </ul></li>
+<li class="Documentation-indexType"><a href="#Replacer">type Replacer</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li><a href="#NewReplacer">func NewReplacer(oldnew ...string) *Replacer</a></li>
+
+          </ul></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li><a href="#Replacer.Replace">func (r *Replacer) Replace(s string) string</a></li>
+<li><a href="#Replacer.WriteString">func (r *Replacer) WriteString(w io.Writer, s string) (n int, err error)</a></li>
+
+          </ul></li>
+<li class="Documentation-indexNote"><a href="#pkg-note-BUG">Bugs</a></li></ul>
+</section><section class="Documentation-examples">
+    <h4 tabindex="-1" id="pkg-examples" class="Documentation-examplesHeader">Examples <a class="Documentation-idLink" href="#pkg-examples">¶</a></h4>
+<ul class="Documentation-examplesList">
+<li><a href="#example-Builder" class="js-exampleHref">Builder</a></li>
+<li><a href="#example-Compare" class="js-exampleHref">Compare</a></li>
+<li><a href="#example-Contains" class="js-exampleHref">Contains</a></li>
+<li><a href="#example-ContainsAny" class="js-exampleHref">ContainsAny</a></li>
+<li><a href="#example-ContainsRune" class="js-exampleHref">ContainsRune</a></li>
+<li><a href="#example-Count" class="js-exampleHref">Count</a></li>
+<li><a href="#example-EqualFold" class="js-exampleHref">EqualFold</a></li>
+<li><a href="#example-Fields" class="js-exampleHref">Fields</a></li>
+<li><a href="#example-FieldsFunc" class="js-exampleHref">FieldsFunc</a></li>
+<li><a href="#example-HasPrefix" class="js-exampleHref">HasPrefix</a></li>
+<li><a href="#example-HasSuffix" class="js-exampleHref">HasSuffix</a></li>
+<li><a href="#example-Index" class="js-exampleHref">Index</a></li>
+<li><a href="#example-IndexAny" class="js-exampleHref">IndexAny</a></li>
+<li><a href="#example-IndexByte" class="js-exampleHref">IndexByte</a></li>
+<li><a href="#example-IndexFunc" class="js-exampleHref">IndexFunc</a></li>
+<li><a href="#example-IndexRune" class="js-exampleHref">IndexRune</a></li>
+<li><a href="#example-Join" class="js-exampleHref">Join</a></li>
+<li><a href="#example-LastIndex" class="js-exampleHref">LastIndex</a></li>
+<li><a href="#example-LastIndexAny" class="js-exampleHref">LastIndexAny</a></li>
+<li><a href="#example-LastIndexByte" class="js-exampleHref">LastIndexByte</a></li>
+<li><a href="#example-LastIndexFunc" class="js-exampleHref">LastIndexFunc</a></li>
+<li><a href="#example-Map" class="js-exampleHref">Map</a></li>
+<li><a href="#example-NewReplacer" class="js-exampleHref">NewReplacer</a></li>
+<li><a href="#example-Repeat" class="js-exampleHref">Repeat</a></li>
+<li><a href="#example-Replace" class="js-exampleHref">Replace</a></li>
+<li><a href="#example-ReplaceAll" class="js-exampleHref">ReplaceAll</a></li>
+<li><a href="#example-Split" class="js-exampleHref">Split</a></li>
+<li><a href="#example-SplitAfter" class="js-exampleHref">SplitAfter</a></li>
+<li><a href="#example-SplitAfterN" class="js-exampleHref">SplitAfterN</a></li>
+<li><a href="#example-SplitN" class="js-exampleHref">SplitN</a></li>
+<li><a href="#example-Title" class="js-exampleHref">Title</a></li>
+<li><a href="#example-ToLower" class="js-exampleHref">ToLower</a></li>
+<li><a href="#example-ToLowerSpecial" class="js-exampleHref">ToLowerSpecial</a></li>
+<li><a href="#example-ToTitle" class="js-exampleHref">ToTitle</a></li>
+<li><a href="#example-ToTitleSpecial" class="js-exampleHref">ToTitleSpecial</a></li>
+<li><a href="#example-ToUpper" class="js-exampleHref">ToUpper</a></li>
+<li><a href="#example-ToUpperSpecial" class="js-exampleHref">ToUpperSpecial</a></li>
+<li><a href="#example-Trim" class="js-exampleHref">Trim</a></li>
+<li><a href="#example-TrimFunc" class="js-exampleHref">TrimFunc</a></li>
+<li><a href="#example-TrimLeft" class="js-exampleHref">TrimLeft</a></li>
+<li><a href="#example-TrimLeftFunc" class="js-exampleHref">TrimLeftFunc</a></li>
+<li><a href="#example-TrimPrefix" class="js-exampleHref">TrimPrefix</a></li>
+<li><a href="#example-TrimRight" class="js-exampleHref">TrimRight</a></li>
+<li><a href="#example-TrimRightFunc" class="js-exampleHref">TrimRightFunc</a></li>
+<li><a href="#example-TrimSpace" class="js-exampleHref">TrimSpace</a></li>
+<li><a href="#example-TrimSuffix" class="js-exampleHref">TrimSuffix</a></li>
+</ul>
+</section><h3 tabindex="-1" id="pkg-constants" class="Documentation-constantsHeader">Constants <a href="#pkg-constants">¶</a></h3>
+
+  <section class="Documentation-constants"><div class="Documentation-empty">This section is empty.</div></section>
+
+  <h3 tabindex="-1" id="pkg-variables" class="Documentation-variablesHeader">Variables <a href="#pkg-variables">¶</a></h3>
+
+  <section class="Documentation-variables"><div class="Documentation-empty">This section is empty.</div></section>
+
+  <h3 tabindex="-1" id="pkg-functions" class="Documentation-functionsHeader">Functions <a href="#pkg-functions">¶</a></h3>
+
+  <section class="Documentation-functions"><div class="Documentation-function"><h4 tabindex="-1" id="Compare" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/compare.go#13">Compare</a> <a class="Documentation-idLink" href="#Compare">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func Compare(a, b <a href="/builtin#string">string</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Compare returns an integer comparing two strings lexicographically.
+The result will be 0 if a==b, -1 if a &lt; b, and +1 if a &gt; b.
+</p><p>Compare is included only for symmetry with package bytes.
+It is usually clearer and always faster to use the built-in
+string comparison operators ==, &lt;, &gt;, and so on.
+</p>
+<details tabindex="-1" id="example-Compare" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Compare">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.Compare(&#34;a&#34;, &#34;b&#34;))
+	fmt.Println(strings.Compare(&#34;a&#34;, &#34;a&#34;))
+	fmt.Println(strings.Compare(&#34;b&#34;, &#34;a&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">-1
+0
+1
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="Contains" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#61">Contains</a> <a class="Documentation-idLink" href="#Contains">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func Contains(s, substr <a href="/builtin#string">string</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Contains reports whether substr is within s.
+</p>
+<details tabindex="-1" id="example-Contains" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Contains">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.Contains(&#34;seafood&#34;, &#34;foo&#34;))
+	fmt.Println(strings.Contains(&#34;seafood&#34;, &#34;bar&#34;))
+	fmt.Println(strings.Contains(&#34;seafood&#34;, &#34;&#34;))
+	fmt.Println(strings.Contains(&#34;&#34;, &#34;&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">true
+false
+true
+true
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="ContainsAny" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#66">ContainsAny</a> <a class="Documentation-idLink" href="#ContainsAny">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func ContainsAny(s, chars <a href="/builtin#string">string</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ContainsAny reports whether any Unicode code points in chars are within s.
+</p>
+<details tabindex="-1" id="example-ContainsAny" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-ContainsAny">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.ContainsAny(&#34;team&#34;, &#34;i&#34;))
+	fmt.Println(strings.ContainsAny(&#34;fail&#34;, &#34;ui&#34;))
+	fmt.Println(strings.ContainsAny(&#34;ure&#34;, &#34;ui&#34;))
+	fmt.Println(strings.ContainsAny(&#34;failure&#34;, &#34;ui&#34;))
+	fmt.Println(strings.ContainsAny(&#34;foo&#34;, &#34;&#34;))
+	fmt.Println(strings.ContainsAny(&#34;&#34;, &#34;&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">false
+true
+true
+true
+false
+false
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="ContainsRune" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#71">ContainsRune</a> <a class="Documentation-idLink" href="#ContainsRune">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func ContainsRune(s <a href="/builtin#string">string</a>, r <a href="/builtin#rune">rune</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ContainsRune reports whether the Unicode code point r is within s.
+</p>
+<details tabindex="-1" id="example-ContainsRune" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-ContainsRune">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	// Finds whether a string contains a particular Unicode code point.
+	// The code point for the lowercase letter &#34;a&#34;, for example, is 97.
+	fmt.Println(strings.ContainsRune(&#34;aardvark&#34;, 97))
+	fmt.Println(strings.ContainsRune(&#34;timeout&#34;, 97))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">true
+false
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="Count" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#41">Count</a> <a class="Documentation-idLink" href="#Count">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func Count(s, substr <a href="/builtin#string">string</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Count counts the number of non-overlapping instances of substr in s.
+If substr is an empty string, Count returns 1 + the number of Unicode code points in s.
+</p>
+<details tabindex="-1" id="example-Count" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Count">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.Count(&#34;cheese&#34;, &#34;e&#34;))
+	fmt.Println(strings.Count(&#34;five&#34;, &#34;&#34;)) // before &amp; after each rune
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">3
+5
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="EqualFold" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#970">EqualFold</a> <a class="Documentation-idLink" href="#EqualFold">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func EqualFold(s, t <a href="/builtin#string">string</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>EqualFold reports whether s and t, interpreted as UTF-8 strings,
+are equal under Unicode case-folding, which is a more general
+form of case-insensitivity.
+</p>
+<details tabindex="-1" id="example-EqualFold" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-EqualFold">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.EqualFold(&#34;Go&#34;, &#34;go&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">true
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="Fields" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#320">Fields</a> <a class="Documentation-idLink" href="#Fields">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func Fields(s <a href="/builtin#string">string</a>) []<a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Fields splits the string s around each instance of one or more consecutive white space
+characters, as defined by unicode.IsSpace, returning a slice of substrings of s or an
+empty slice if s contains only white space.
+</p>
+<details tabindex="-1" id="example-Fields" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Fields">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Printf(&#34;Fields are: %q&#34;, strings.Fields(&#34;  foo bar  baz   &#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">Fields are: [&#34;foo&#34; &#34;bar&#34; &#34;baz&#34;]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="FieldsFunc" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#375">FieldsFunc</a> <a class="Documentation-idLink" href="#FieldsFunc">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func FieldsFunc(s <a href="/builtin#string">string</a>, f func(<a href="/builtin#rune">rune</a>) <a href="/builtin#bool">bool</a>) []<a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>FieldsFunc splits the string s at each run of Unicode code points c satisfying f(c)
+and returns an array of slices of s. If all code points in s satisfy f(c) or the
+string is empty, an empty slice is returned.
+</p><p>FieldsFunc makes no guarantees about the order in which it calls f(c)
+and assumes that f always returns the same value for a given c.
+</p>
+<details tabindex="-1" id="example-FieldsFunc" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-FieldsFunc">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+	&#34;unicode&#34;
+)
+
+func main() {
+	f := func(c rune) bool {
+		return !unicode.IsLetter(c) &amp;&amp; !unicode.IsNumber(c)
+	}
+	fmt.Printf(&#34;Fields are: %q&#34;, strings.FieldsFunc(&#34;  foo1;bar2,baz3...&#34;, f))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">Fields are: [&#34;foo1&#34; &#34;bar2&#34; &#34;baz3&#34;]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="HasPrefix" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#444">HasPrefix</a> <a class="Documentation-idLink" href="#HasPrefix">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func HasPrefix(s, prefix <a href="/builtin#string">string</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>HasPrefix tests whether the string s begins with prefix.
+</p>
+<details tabindex="-1" id="example-HasPrefix" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-HasPrefix">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.HasPrefix(&#34;Gopher&#34;, &#34;Go&#34;))
+	fmt.Println(strings.HasPrefix(&#34;Gopher&#34;, &#34;C&#34;))
+	fmt.Println(strings.HasPrefix(&#34;Gopher&#34;, &#34;&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">true
+false
+true
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="HasSuffix" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#449">HasSuffix</a> <a class="Documentation-idLink" href="#HasSuffix">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func HasSuffix(s, suffix <a href="/builtin#string">string</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>HasSuffix tests whether the string s ends with suffix.
+</p>
+<details tabindex="-1" id="example-HasSuffix" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-HasSuffix">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.HasSuffix(&#34;Amigo&#34;, &#34;go&#34;))
+	fmt.Println(strings.HasSuffix(&#34;Amigo&#34;, &#34;O&#34;))
+	fmt.Println(strings.HasSuffix(&#34;Amigo&#34;, &#34;Ami&#34;))
+	fmt.Println(strings.HasSuffix(&#34;Amigo&#34;, &#34;&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">true
+false
+false
+true
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="Index" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#1024">Index</a> <a class="Documentation-idLink" href="#Index">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func Index(s, substr <a href="/builtin#string">string</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Index returns the index of the first instance of substr in s, or -1 if substr is not present in s.
+</p>
+<details tabindex="-1" id="example-Index" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Index">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.Index(&#34;chicken&#34;, &#34;ken&#34;))
+	fmt.Println(strings.Index(&#34;chicken&#34;, &#34;dmr&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">4
+-1
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="IndexAny" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#141">IndexAny</a> <a class="Documentation-idLink" href="#IndexAny">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func IndexAny(s, chars <a href="/builtin#string">string</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>IndexAny returns the index of the first instance of any Unicode code point
+from chars in s, or -1 if no Unicode code point from chars is present in s.
+</p>
+<details tabindex="-1" id="example-IndexAny" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-IndexAny">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.IndexAny(&#34;chicken&#34;, &#34;aeiouy&#34;))
+	fmt.Println(strings.IndexAny(&#34;crwth&#34;, &#34;aeiouy&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">2
+-1
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="IndexByte" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#113">IndexByte</a> <a class="Documentation-idLink" href="#IndexByte">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func IndexByte(s <a href="/builtin#string">string</a>, c <a href="/builtin#byte">byte</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>IndexByte returns the index of the first instance of c in s, or -1 if c is not present in s.
+</p>
+<details tabindex="-1" id="example-IndexByte" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-IndexByte">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.IndexByte(&#34;golang&#34;, &#39;g&#39;))
+	fmt.Println(strings.IndexByte(&#34;gophers&#34;, &#39;h&#39;))
+	fmt.Println(strings.IndexByte(&#34;golang&#34;, &#39;x&#39;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">0
+3
+-1
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="IndexFunc" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#758">IndexFunc</a> <a class="Documentation-idLink" href="#IndexFunc">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func IndexFunc(s <a href="/builtin#string">string</a>, f func(<a href="/builtin#rune">rune</a>) <a href="/builtin#bool">bool</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>IndexFunc returns the index into s of the first Unicode
+code point satisfying f(c), or -1 if none do.
+</p>
+<details tabindex="-1" id="example-IndexFunc" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-IndexFunc">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+	&#34;unicode&#34;
+)
+
+func main() {
+	f := func(c rune) bool {
+		return unicode.Is(unicode.Han, c)
+	}
+	fmt.Println(strings.IndexFunc(&#34;Hello, 世界&#34;, f))
+	fmt.Println(strings.IndexFunc(&#34;Hello, world&#34;, f))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">7
+-1
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="IndexRune" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#121">IndexRune</a> <a class="Documentation-idLink" href="#IndexRune">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func IndexRune(s <a href="/builtin#string">string</a>, r <a href="/builtin#rune">rune</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>IndexRune returns the index of the first instance of the Unicode code point
+r, or -1 if rune is not present in s.
+If r is utf8.RuneError, it returns the first instance of any
+invalid UTF-8 byte sequence.
+</p>
+<details tabindex="-1" id="example-IndexRune" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-IndexRune">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.IndexRune(&#34;chicken&#34;, &#39;k&#39;))
+	fmt.Println(strings.IndexRune(&#34;chicken&#34;, &#39;d&#39;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">4
+-1
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="Join" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#421">Join</a> <a class="Documentation-idLink" href="#Join">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func Join(elems []<a href="/builtin#string">string</a>, sep <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Join concatenates the elements of its first argument to create a single string. The separator
+string sep is placed between elements in the resulting string.
+</p>
+<details tabindex="-1" id="example-Join" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Join">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	s := []string{&#34;foo&#34;, &#34;bar&#34;, &#34;baz&#34;}
+	fmt.Println(strings.Join(s, &#34;, &#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">foo, bar, baz
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="LastIndex" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#76">LastIndex</a> <a class="Documentation-idLink" href="#LastIndex">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func LastIndex(s, substr <a href="/builtin#string">string</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>LastIndex returns the index of the last instance of substr in s, or -1 if substr is not present in s.
+</p>
+<details tabindex="-1" id="example-LastIndex" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-LastIndex">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.Index(&#34;go gopher&#34;, &#34;go&#34;))
+	fmt.Println(strings.LastIndex(&#34;go gopher&#34;, &#34;go&#34;))
+	fmt.Println(strings.LastIndex(&#34;go gopher&#34;, &#34;rodent&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">0
+3
+-1
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="LastIndexAny" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#175">LastIndexAny</a> <a class="Documentation-idLink" href="#LastIndexAny">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func LastIndexAny(s, chars <a href="/builtin#string">string</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>LastIndexAny returns the index of the last instance of any Unicode code
+point from chars in s, or -1 if no Unicode code point from chars is
+present in s.
+</p>
+<details tabindex="-1" id="example-LastIndexAny" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-LastIndexAny">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.LastIndexAny(&#34;go gopher&#34;, &#34;go&#34;))
+	fmt.Println(strings.LastIndexAny(&#34;go gopher&#34;, &#34;rodent&#34;))
+	fmt.Println(strings.LastIndexAny(&#34;go gopher&#34;, &#34;fail&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">4
+8
+-1
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="LastIndexByte" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#225">LastIndexByte</a> <a class="Documentation-idLink" href="#LastIndexByte">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func LastIndexByte(s <a href="/builtin#string">string</a>, c <a href="/builtin#byte">byte</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>LastIndexByte returns the index of the last instance of c in s, or -1 if c is not present in s.
+</p>
+<details tabindex="-1" id="example-LastIndexByte" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-LastIndexByte">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.LastIndexByte(&#34;Hello, world&#34;, &#39;l&#39;))
+	fmt.Println(strings.LastIndexByte(&#34;Hello, world&#34;, &#39;o&#39;))
+	fmt.Println(strings.LastIndexByte(&#34;Hello, world&#34;, &#39;x&#39;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">10
+8
+-1
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="LastIndexFunc" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#764">LastIndexFunc</a> <a class="Documentation-idLink" href="#LastIndexFunc">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func LastIndexFunc(s <a href="/builtin#string">string</a>, f func(<a href="/builtin#rune">rune</a>) <a href="/builtin#bool">bool</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>LastIndexFunc returns the index into s of the last
+Unicode code point satisfying f(c), or -1 if none do.
+</p>
+<details tabindex="-1" id="example-LastIndexFunc" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-LastIndexFunc">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+	&#34;unicode&#34;
+)
+
+func main() {
+	fmt.Println(strings.LastIndexFunc(&#34;go 123&#34;, unicode.IsNumber))
+	fmt.Println(strings.LastIndexFunc(&#34;123 go&#34;, unicode.IsNumber))
+	fmt.Println(strings.LastIndexFunc(&#34;go&#34;, unicode.IsNumber))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">5
+2
+-1
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="Map" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#456">Map</a> <a class="Documentation-idLink" href="#Map">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func Map(mapping func(<a href="/builtin#rune">rune</a>) <a href="/builtin#rune">rune</a>, s <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Map returns a copy of the string s with all its characters modified
+according to the mapping function. If mapping returns a negative value, the character is
+dropped from the string with no replacement.
+</p>
+<details tabindex="-1" id="example-Map" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Map">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	rot13 := func(r rune) rune {
+		switch {
+		case r &gt;= &#39;A&#39; &amp;&amp; r &lt;= &#39;Z&#39;:
+			return &#39;A&#39; + (r-&#39;A&#39;+13)%26
+		case r &gt;= &#39;a&#39; &amp;&amp; r &lt;= &#39;z&#39;:
+			return &#39;a&#39; + (r-&#39;a&#39;+13)%26
+		}
+		return r
+	}
+	fmt.Println(strings.Map(rot13, &#34;&#39;Twas brillig and the slithy gopher...&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">&#39;Gjnf oevyyvt naq gur fyvgul tbcure...
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="Repeat" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#519">Repeat</a> <a class="Documentation-idLink" href="#Repeat">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func Repeat(s <a href="/builtin#string">string</a>, count <a href="/builtin#int">int</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Repeat returns a new string consisting of count copies of the string s.
+</p><p>It panics if count is negative or if
+the result of (len(s) * count) overflows.
+</p>
+<details tabindex="-1" id="example-Repeat" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Repeat">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(&#34;ba&#34; + strings.Repeat(&#34;na&#34;, 2))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">banana
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="Replace" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#924">Replace</a> <a class="Documentation-idLink" href="#Replace">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func Replace(s, old, new <a href="/builtin#string">string</a>, n <a href="/builtin#int">int</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Replace returns a copy of the string s with the first n
+non-overlapping instances of old replaced by new.
+If old is empty, it matches at the beginning of the string
+and after each UTF-8 sequence, yielding up to k+1 replacements
+for a k-rune string.
+If n &lt; 0, there is no limit on the number of replacements.
+</p>
+<details tabindex="-1" id="example-Replace" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Replace">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.Replace(&#34;oink oink oink&#34;, &#34;k&#34;, &#34;ky&#34;, 2))
+	fmt.Println(strings.Replace(&#34;oink oink oink&#34;, &#34;oink&#34;, &#34;moo&#34;, -1))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">oinky oinky oink
+moo moo moo
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="ReplaceAll" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#963">ReplaceAll</a> <a class="Documentation-idLink" href="#ReplaceAll">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func ReplaceAll(s, old, new <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ReplaceAll returns a copy of the string s with all
+non-overlapping instances of old replaced by new.
+If old is empty, it matches at the beginning of the string
+and after each UTF-8 sequence, yielding up to k+1 replacements
+for a k-rune string.
+</p>
+<details tabindex="-1" id="example-ReplaceAll" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-ReplaceAll">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.ReplaceAll(&#34;oink oink oink&#34;, &#34;oink&#34;, &#34;moo&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">moo moo moo
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="Split" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#299">Split</a> <a class="Documentation-idLink" href="#Split">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func Split(s, sep <a href="/builtin#string">string</a>) []<a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Split slices s into all substrings separated by sep and returns a slice of
+the substrings between those separators.
+</p><p>If s does not contain sep and sep is not empty, Split returns a
+slice of length 1 whose only element is s.
+</p><p>If sep is empty, Split splits after each UTF-8 sequence. If both s
+and sep are empty, Split returns an empty slice.
+</p><p>It is equivalent to SplitN with a count of -1.
+</p>
+<details tabindex="-1" id="example-Split" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Split">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Printf(&#34;%q\n&#34;, strings.Split(&#34;a,b,c&#34;, &#34;,&#34;))
+	fmt.Printf(&#34;%q\n&#34;, strings.Split(&#34;a man a plan a canal panama&#34;, &#34;a &#34;))
+	fmt.Printf(&#34;%q\n&#34;, strings.Split(&#34; xyz &#34;, &#34;&#34;))
+	fmt.Printf(&#34;%q\n&#34;, strings.Split(&#34;&#34;, &#34;Bernardo O&#39;Higgins&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">[&#34;a&#34; &#34;b&#34; &#34;c&#34;]
+[&#34;&#34; &#34;man &#34; &#34;plan &#34; &#34;canal panama&#34;]
+[&#34; &#34; &#34;x&#34; &#34;y&#34; &#34;z&#34; &#34; &#34;]
+[&#34;&#34;]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="SplitAfter" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#311">SplitAfter</a> <a class="Documentation-idLink" href="#SplitAfter">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func SplitAfter(s, sep <a href="/builtin#string">string</a>) []<a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>SplitAfter slices s into all substrings after each instance of sep and
+returns a slice of those substrings.
+</p><p>If s does not contain sep and sep is not empty, SplitAfter returns
+a slice of length 1 whose only element is s.
+</p><p>If sep is empty, SplitAfter splits after each UTF-8 sequence. If
+both s and sep are empty, SplitAfter returns an empty slice.
+</p><p>It is equivalent to SplitAfterN with a count of -1.
+</p>
+<details tabindex="-1" id="example-SplitAfter" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SplitAfter">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Printf(&#34;%q\n&#34;, strings.SplitAfter(&#34;a,b,c&#34;, &#34;,&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">[&#34;a,&#34; &#34;b,&#34; &#34;c&#34;]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="SplitAfterN" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#285">SplitAfterN</a> <a class="Documentation-idLink" href="#SplitAfterN">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func SplitAfterN(s, sep <a href="/builtin#string">string</a>, n <a href="/builtin#int">int</a>) []<a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>SplitAfterN slices s into substrings after each instance of sep and
+returns a slice of those substrings.
+</p><p>The count determines the number of substrings to return:
+</p><pre>n &gt; 0: at most n substrings; the last substring will be the unsplit remainder.
+n == 0: the result is nil (zero substrings)
+n &lt; 0: all substrings
+</pre><p>Edge cases for s and sep (for example, empty strings) are handled
+as described in the documentation for SplitAfter.
+</p>
+<details tabindex="-1" id="example-SplitAfterN" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SplitAfterN">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Printf(&#34;%q\n&#34;, strings.SplitAfterN(&#34;a,b,c&#34;, &#34;,&#34;, 2))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">[&#34;a,&#34; &#34;b,c&#34;]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="SplitN" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#273">SplitN</a> <a class="Documentation-idLink" href="#SplitN">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func SplitN(s, sep <a href="/builtin#string">string</a>, n <a href="/builtin#int">int</a>) []<a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>SplitN slices s into substrings separated by sep and returns a slice of
+the substrings between those separators.
+</p><p>The count determines the number of substrings to return:
+</p><pre>n &gt; 0: at most n substrings; the last substring will be the unsplit remainder.
+n == 0: the result is nil (zero substrings)
+n &lt; 0: all substrings
+</pre><p>Edge cases for s and sep (for example, empty strings) are handled
+as described in the documentation for Split.
+</p>
+<details tabindex="-1" id="example-SplitN" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SplitN">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Printf(&#34;%q\n&#34;, strings.SplitN(&#34;a,b,c&#34;, &#34;,&#34;, 2))
+	z := strings.SplitN(&#34;a,b,c&#34;, &#34;,&#34;, 0)
+	fmt.Printf(&#34;%q (nil = %v)\n&#34;, z, z == nil)
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">[&#34;a&#34; &#34;b,c&#34;]
+[] (nil = true)
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="Title" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#710">Title</a> <a class="Documentation-idLink" href="#Title">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func Title(s <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Title returns a copy of the string s with all Unicode letters that begin words
+mapped to their Unicode title case.
+</p><p>BUG(rsc): The rule Title uses for word boundaries does not handle Unicode punctuation properly.
+</p>
+<details tabindex="-1" id="example-Title" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Title">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	// Compare this example to the ToTitle example.
+	fmt.Println(strings.Title(&#34;her royal highness&#34;))
+	fmt.Println(strings.Title(&#34;loud noises&#34;))
+	fmt.Println(strings.Title(&#34;хлеб&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">Her Royal Highness
+Loud Noises
+Хлеб
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="ToLower" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#580">ToLower</a> <a class="Documentation-idLink" href="#ToLower">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func ToLower(s <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ToLower returns s with all Unicode letters mapped to their lower case.
+</p>
+<details tabindex="-1" id="example-ToLower" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-ToLower">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.ToLower(&#34;Gopher&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">gopher
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="ToLowerSpecial" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#621">ToLowerSpecial</a> <a class="Documentation-idLink" href="#ToLowerSpecial">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func ToLowerSpecial(c <a href="/unicode">unicode</a>.<a href="/unicode#SpecialCase">SpecialCase</a>, s <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ToLowerSpecial returns a copy of the string s with all Unicode letters mapped to their
+lower case using the case mapping specified by c.
+</p>
+<details tabindex="-1" id="example-ToLowerSpecial" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-ToLowerSpecial">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+	&#34;unicode&#34;
+)
+
+func main() {
+	fmt.Println(strings.ToLowerSpecial(unicode.TurkishCase, &#34;Önnek İş&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">önnek iş
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="ToTitle" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#611">ToTitle</a> <a class="Documentation-idLink" href="#ToTitle">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func ToTitle(s <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ToTitle returns a copy of the string s with all Unicode letters mapped to
+their Unicode title case.
+</p>
+<details tabindex="-1" id="example-ToTitle" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-ToTitle">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	// Compare this example to the Title example.
+	fmt.Println(strings.ToTitle(&#34;her royal highness&#34;))
+	fmt.Println(strings.ToTitle(&#34;loud noises&#34;))
+	fmt.Println(strings.ToTitle(&#34;хлеб&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">HER ROYAL HIGHNESS
+LOUD NOISES
+ХЛЕБ
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="ToTitleSpecial" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#627">ToTitleSpecial</a> <a class="Documentation-idLink" href="#ToTitleSpecial">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func ToTitleSpecial(c <a href="/unicode">unicode</a>.<a href="/unicode#SpecialCase">SpecialCase</a>, s <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ToTitleSpecial returns a copy of the string s with all Unicode letters mapped to their
+Unicode title case, giving priority to the special casing rules.
+</p>
+<details tabindex="-1" id="example-ToTitleSpecial" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-ToTitleSpecial">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+	&#34;unicode&#34;
+)
+
+func main() {
+	fmt.Println(strings.ToTitleSpecial(unicode.TurkishCase, &#34;dünyanın ilk borsa yapısı Aizonai kabul edilir&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">DÜNYANIN İLK BORSA YAPISI AİZONAİ KABUL EDİLİR
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="ToUpper" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#550">ToUpper</a> <a class="Documentation-idLink" href="#ToUpper">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func ToUpper(s <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ToUpper returns s with all Unicode letters mapped to their upper case.
+</p>
+<details tabindex="-1" id="example-ToUpper" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-ToUpper">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.ToUpper(&#34;Gopher&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">GOPHER
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="ToUpperSpecial" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#615">ToUpperSpecial</a> <a class="Documentation-idLink" href="#ToUpperSpecial">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func ToUpperSpecial(c <a href="/unicode">unicode</a>.<a href="/unicode#SpecialCase">SpecialCase</a>, s <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ToUpperSpecial returns a copy of the string s with all Unicode letters mapped to their
+upper case using the case mapping specified by c.
+</p>
+<details tabindex="-1" id="example-ToUpperSpecial" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-ToUpperSpecial">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+	&#34;unicode&#34;
+)
+
+func main() {
+	fmt.Println(strings.ToUpperSpecial(unicode.TurkishCase, &#34;örnek iş&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">ÖRNEK İŞ
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="ToValidUTF8" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#633">ToValidUTF8</a> <a class="Documentation-idLink" href="#ToValidUTF8">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func ToValidUTF8(s, replacement <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ToValidUTF8 returns a copy of the string s with each run of invalid UTF-8 byte sequences
+replaced by the replacement string, which may be empty.
+</p>
+</div><div class="Documentation-function"><h4 tabindex="-1" id="Trim" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#836">Trim</a> <a class="Documentation-idLink" href="#Trim">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func Trim(s, cutset <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Trim returns a slice of the string s with all leading and
+trailing Unicode code points contained in cutset removed.
+</p>
+<details tabindex="-1" id="example-Trim" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Trim">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Print(strings.Trim(&#34;¡¡¡Hello, Gophers!!!&#34;, &#34;!¡&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">Hello, Gophers
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="TrimFunc" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#752">TrimFunc</a> <a class="Documentation-idLink" href="#TrimFunc">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func TrimFunc(s <a href="/builtin#string">string</a>, f func(<a href="/builtin#rune">rune</a>) <a href="/builtin#bool">bool</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>TrimFunc returns a slice of the string s with all leading
+and trailing Unicode code points c satisfying f(c) removed.
+</p>
+<details tabindex="-1" id="example-TrimFunc" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-TrimFunc">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+	&#34;unicode&#34;
+)
+
+func main() {
+	fmt.Print(strings.TrimFunc(&#34;¡¡¡Hello, Gophers!!!&#34;, func(r rune) bool {
+		return !unicode.IsLetter(r) &amp;&amp; !unicode.IsNumber(r)
+	}))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">Hello, Gophers
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="TrimLeft" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#847">TrimLeft</a> <a class="Documentation-idLink" href="#TrimLeft">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func TrimLeft(s, cutset <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>TrimLeft returns a slice of the string s with all leading
+Unicode code points contained in cutset removed.
+</p><p>To remove a prefix, use TrimPrefix instead.
+</p>
+<details tabindex="-1" id="example-TrimLeft" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-TrimLeft">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Print(strings.TrimLeft(&#34;¡¡¡Hello, Gophers!!!&#34;, &#34;!¡&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">Hello, Gophers!!!
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="TrimLeftFunc" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#729">TrimLeftFunc</a> <a class="Documentation-idLink" href="#TrimLeftFunc">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func TrimLeftFunc(s <a href="/builtin#string">string</a>, f func(<a href="/builtin#rune">rune</a>) <a href="/builtin#bool">bool</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>TrimLeftFunc returns a slice of the string s with all leading
+Unicode code points c satisfying f(c) removed.
+</p>
+<details tabindex="-1" id="example-TrimLeftFunc" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-TrimLeftFunc">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+	&#34;unicode&#34;
+)
+
+func main() {
+	fmt.Print(strings.TrimLeftFunc(&#34;¡¡¡Hello, Gophers!!!&#34;, func(r rune) bool {
+		return !unicode.IsLetter(r) &amp;&amp; !unicode.IsNumber(r)
+	}))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">Hello, Gophers!!!
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="TrimPrefix" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#902">TrimPrefix</a> <a class="Documentation-idLink" href="#TrimPrefix">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func TrimPrefix(s, prefix <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>TrimPrefix returns s without the provided leading prefix string.
+If s doesn&#39;t start with prefix, s is returned unchanged.
+</p>
+<details tabindex="-1" id="example-TrimPrefix" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-TrimPrefix">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	var s = &#34;¡¡¡Hello, Gophers!!!&#34;
+	s = strings.TrimPrefix(s, &#34;¡¡¡Hello, &#34;)
+	s = strings.TrimPrefix(s, &#34;¡¡¡Howdy, &#34;)
+	fmt.Print(s)
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">Gophers!!!
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="TrimRight" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#858">TrimRight</a> <a class="Documentation-idLink" href="#TrimRight">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func TrimRight(s, cutset <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>TrimRight returns a slice of the string s, with all trailing
+Unicode code points contained in cutset removed.
+</p><p>To remove a suffix, use TrimSuffix instead.
+</p>
+<details tabindex="-1" id="example-TrimRight" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-TrimRight">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Print(strings.TrimRight(&#34;¡¡¡Hello, Gophers!!!&#34;, &#34;!¡&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">¡¡¡Hello, Gophers
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="TrimRightFunc" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#739">TrimRightFunc</a> <a class="Documentation-idLink" href="#TrimRightFunc">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func TrimRightFunc(s <a href="/builtin#string">string</a>, f func(<a href="/builtin#rune">rune</a>) <a href="/builtin#bool">bool</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>TrimRightFunc returns a slice of the string s with all trailing
+Unicode code points c satisfying f(c) removed.
+</p>
+<details tabindex="-1" id="example-TrimRightFunc" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-TrimRightFunc">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+	&#34;unicode&#34;
+)
+
+func main() {
+	fmt.Print(strings.TrimRightFunc(&#34;¡¡¡Hello, Gophers!!!&#34;, func(r rune) bool {
+		return !unicode.IsLetter(r) &amp;&amp; !unicode.IsNumber(r)
+	}))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">¡¡¡Hello, Gophers
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="TrimSpace" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#867">TrimSpace</a> <a class="Documentation-idLink" href="#TrimSpace">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func TrimSpace(s <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>TrimSpace returns a slice of the string s, with all leading
+and trailing white space removed, as defined by Unicode.
+</p>
+<details tabindex="-1" id="example-TrimSpace" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-TrimSpace">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	fmt.Println(strings.TrimSpace(&#34; \t\n Hello, Gophers \n\t\r\n&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">Hello, Gophers
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-function"><h4 tabindex="-1" id="TrimSuffix" data-kind="function" class="Documentation-functionHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go#911">TrimSuffix</a> <a class="Documentation-idLink" href="#TrimSuffix">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func TrimSuffix(s, suffix <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>TrimSuffix returns s without the provided trailing suffix string.
+If s doesn&#39;t end with suffix, s is returned unchanged.
+</p>
+<details tabindex="-1" id="example-TrimSuffix" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-TrimSuffix">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	var s = &#34;¡¡¡Hello, Gophers!!!&#34;
+	s = strings.TrimSuffix(s, &#34;, Gophers!!!&#34;)
+	s = strings.TrimSuffix(s, &#34;, Marmots!!!&#34;)
+	fmt.Print(s)
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">¡¡¡Hello
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div></section>
+
+  <h3 tabindex="-1" id="pkg-types" class="Documentation-typesHeader">Types <a href="#pkg-types">¶</a></h3>
+
+  <section class="Documentation-types"><div class="Documentation-type"><h4 tabindex="-1" id="Builder" data-kind="type" class="Documentation-typeHeader">type <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/builder.go#15">Builder</a> <a class="Documentation-idLink" href="#Builder">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>type Builder struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>A Builder is used to efficiently build a string using Write methods.
+It minimizes memory copying. The zero value is ready to use.
+Do not copy a non-zero Builder.
+</p>
+<details tabindex="-1" id="example-Builder" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Builder">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	var b strings.Builder
+	for i := 3; i &gt;= 1; i-- {
+		fmt.Fprintf(&amp;b, &#34;%d...&#34;, i)
+	}
+	b.WriteString(&#34;ignition&#34;)
+	fmt.Println(b.String())
+
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">3...2...1...ignition
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<div class="Documentation-typeMethod"><h4 tabindex="-1" id="Builder.Cap" data-kind="method" class="Documentation-typeMethodHeader">func (*Builder) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/builder.go#57">Cap</a> <a class="Documentation-idLink" href="#Builder.Cap">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (b *<a href="#Builder">Builder</a>) Cap() <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Cap returns the capacity of the builder&#39;s underlying byte slice. It is the
+total space allocated for the string being built and includes any bytes
+already written.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Builder.Grow" data-kind="method" class="Documentation-typeMethodHeader">func (*Builder) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/builder.go#76">Grow</a> <a class="Documentation-idLink" href="#Builder.Grow">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (b *<a href="#Builder">Builder</a>) Grow(n <a href="/builtin#int">int</a>)</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Grow grows b&#39;s capacity, if necessary, to guarantee space for
+another n bytes. After Grow(n), at least n bytes can be written to b
+without another allocation. If n is negative, Grow panics.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Builder.Len" data-kind="method" class="Documentation-typeMethodHeader">func (*Builder) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/builder.go#52">Len</a> <a class="Documentation-idLink" href="#Builder.Len">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (b *<a href="#Builder">Builder</a>) Len() <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Len returns the number of accumulated bytes; b.Len() == len(b.String()).
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Builder.Reset" data-kind="method" class="Documentation-typeMethodHeader">func (*Builder) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/builder.go#60">Reset</a> <a class="Documentation-idLink" href="#Builder.Reset">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (b *<a href="#Builder">Builder</a>) Reset()</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Reset resets the Builder to be empty.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Builder.String" data-kind="method" class="Documentation-typeMethodHeader">func (*Builder) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/builder.go#47">String</a> <a class="Documentation-idLink" href="#Builder.String">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (b *<a href="#Builder">Builder</a>) String() <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>String returns the accumulated string.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Builder.Write" data-kind="method" class="Documentation-typeMethodHeader">func (*Builder) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/builder.go#88">Write</a> <a class="Documentation-idLink" href="#Builder.Write">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (b *<a href="#Builder">Builder</a>) Write(p []<a href="/builtin#byte">byte</a>) (<a href="/builtin#int">int</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Write appends the contents of p to b&#39;s buffer.
+Write always returns len(p), nil.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Builder.WriteByte" data-kind="method" class="Documentation-typeMethodHeader">func (*Builder) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/builder.go#96">WriteByte</a> <a class="Documentation-idLink" href="#Builder.WriteByte">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (b *<a href="#Builder">Builder</a>) WriteByte(c <a href="/builtin#byte">byte</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>WriteByte appends the byte c to b&#39;s buffer.
+The returned error is always nil.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Builder.WriteRune" data-kind="method" class="Documentation-typeMethodHeader">func (*Builder) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/builder.go#104">WriteRune</a> <a class="Documentation-idLink" href="#Builder.WriteRune">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (b *<a href="#Builder">Builder</a>) WriteRune(r <a href="/builtin#rune">rune</a>) (<a href="/builtin#int">int</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>WriteRune appends the UTF-8 encoding of Unicode code point r to b&#39;s buffer.
+It returns the length of r and a nil error.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Builder.WriteString" data-kind="method" class="Documentation-typeMethodHeader">func (*Builder) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/builder.go#121">WriteString</a> <a class="Documentation-idLink" href="#Builder.WriteString">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (b *<a href="#Builder">Builder</a>) WriteString(s <a href="/builtin#string">string</a>) (<a href="/builtin#int">int</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>WriteString appends the contents of s to b&#39;s buffer.
+It returns the length of s and a nil error.
+</p>
+</div></div><div class="Documentation-type"><h4 tabindex="-1" id="Reader" data-kind="type" class="Documentation-typeHeader">type <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#17">Reader</a> <a class="Documentation-idLink" href="#Reader">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>type Reader struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>A Reader implements the io.Reader, io.ReaderAt, io.ByteReader, io.ByteScanner,
+io.RuneReader, io.RuneScanner, io.Seeker, and io.WriterTo interfaces by reading
+from a string.
+The zero value for Reader operates like a Reader of an empty string.
+</p>
+<div class="Documentation-typeFunc"><h4 tabindex="-1" id="NewReader" data-kind="function" class="Documentation-typeFuncHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#160">NewReader</a> <a class="Documentation-idLink" href="#NewReader">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func NewReader(s <a href="/builtin#string">string</a>) *<a href="#Reader">Reader</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>NewReader returns a new Reader reading from s.
+It is similar to bytes.NewBufferString but more efficient and read-only.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Reader.Len" data-kind="method" class="Documentation-typeMethodHeader">func (*Reader) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#25">Len</a> <a class="Documentation-idLink" href="#Reader.Len">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Reader">Reader</a>) Len() <a href="/builtin#int">int</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Len returns the number of bytes of the unread portion of the
+string.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Reader.Read" data-kind="method" class="Documentation-typeMethodHeader">func (*Reader) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#39">Read</a> <a class="Documentation-idLink" href="#Reader.Read">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Reader">Reader</a>) Read(b []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Read implements the io.Reader interface.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Reader.ReadAt" data-kind="method" class="Documentation-typeMethodHeader">func (*Reader) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#50">ReadAt</a> <a class="Documentation-idLink" href="#Reader.ReadAt">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Reader">Reader</a>) ReadAt(b []<a href="/builtin#byte">byte</a>, off <a href="/builtin#int64">int64</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ReadAt implements the io.ReaderAt interface.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Reader.ReadByte" data-kind="method" class="Documentation-typeMethodHeader">func (*Reader) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#66">ReadByte</a> <a class="Documentation-idLink" href="#Reader.ReadByte">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Reader">Reader</a>) ReadByte() (<a href="/builtin#byte">byte</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ReadByte implements the io.ByteReader interface.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Reader.ReadRune" data-kind="method" class="Documentation-typeMethodHeader">func (*Reader) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#87">ReadRune</a> <a class="Documentation-idLink" href="#Reader.ReadRune">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Reader">Reader</a>) ReadRune() (ch <a href="/builtin#rune">rune</a>, size <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>ReadRune implements the io.RuneReader interface.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Reader.Reset" data-kind="method" class="Documentation-typeMethodHeader">func (*Reader) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#156">Reset</a> <a class="Documentation-idLink" href="#Reader.Reset">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Reader">Reader</a>) Reset(s <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Reset resets the Reader to be reading from s.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Reader.Seek" data-kind="method" class="Documentation-typeMethodHeader">func (*Reader) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#116">Seek</a> <a class="Documentation-idLink" href="#Reader.Seek">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Reader">Reader</a>) Seek(offset <a href="/builtin#int64">int64</a>, whence <a href="/builtin#int">int</a>) (<a href="/builtin#int64">int64</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Seek implements the io.Seeker interface.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Reader.Size" data-kind="method" class="Documentation-typeMethodHeader">func (*Reader) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#36">Size</a> <a class="Documentation-idLink" href="#Reader.Size">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Reader">Reader</a>) Size() <a href="/builtin#int64">int64</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Size returns the original length of the underlying string.
+Size is the number of bytes available for reading via ReadAt.
+The returned value is always the same and is not affected by calls
+to any other method.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Reader.UnreadByte" data-kind="method" class="Documentation-typeMethodHeader">func (*Reader) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#77">UnreadByte</a> <a class="Documentation-idLink" href="#Reader.UnreadByte">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Reader">Reader</a>) UnreadByte() <a href="/builtin#error">error</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>UnreadByte implements the io.ByteScanner interface.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Reader.UnreadRune" data-kind="method" class="Documentation-typeMethodHeader">func (*Reader) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#103">UnreadRune</a> <a class="Documentation-idLink" href="#Reader.UnreadRune">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Reader">Reader</a>) UnreadRune() <a href="/builtin#error">error</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>UnreadRune implements the io.RuneScanner interface.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Reader.WriteTo" data-kind="method" class="Documentation-typeMethodHeader">func (*Reader) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go#137">WriteTo</a> <a class="Documentation-idLink" href="#Reader.WriteTo">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Reader">Reader</a>) WriteTo(w <a href="/io">io</a>.<a href="/io#Writer">Writer</a>) (n <a href="/builtin#int64">int64</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>WriteTo implements the io.WriterTo interface.
+</p>
+</div></div><div class="Documentation-type"><h4 tabindex="-1" id="Replacer" data-kind="type" class="Documentation-typeHeader">type <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/replace.go#14">Replacer</a> <a class="Documentation-idLink" href="#Replacer">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>type Replacer struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Replacer replaces a list of strings with replacements.
+It is safe for concurrent use by multiple goroutines.
+</p>
+<div class="Documentation-typeFunc"><h4 tabindex="-1" id="NewReplacer" data-kind="function" class="Documentation-typeFuncHeader">func <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/replace.go#32">NewReplacer</a> <a class="Documentation-idLink" href="#NewReplacer">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func NewReplacer(oldnew ...<a href="/builtin#string">string</a>) *<a href="#Replacer">Replacer</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>NewReplacer returns a new Replacer from a list of old, new string
+pairs. Replacements are performed in the order they appear in the
+target string, without overlapping matches. The old string
+comparisons are done in argument order.
+</p><p>NewReplacer panics if given an odd number of arguments.
+</p>
+<details tabindex="-1" id="example-NewReplacer" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-NewReplacer">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<textarea class="Documentation-exampleCode" spellcheck="false">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReplacer(&#34;&lt;&#34;, &#34;&amp;lt;&#34;, &#34;&gt;&#34;, &#34;&amp;gt;&#34;)
+	fmt.Println(r.Replace(&#34;This is &lt;b&gt;HTML&lt;/b&gt;!&#34;))
+}
+</textarea>
+
+<pre><span class="Documentation-exampleOutputLabel">Output:</span>
+
+<span class="Documentation-exampleOutput">This is &amp;lt;b&amp;gt;HTML&amp;lt;/b&amp;gt;!
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Replacer.Replace" data-kind="method" class="Documentation-typeMethodHeader">func (*Replacer) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/replace.go#95">Replace</a> <a class="Documentation-idLink" href="#Replacer.Replace">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Replacer">Replacer</a>) Replace(s <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>Replace returns a copy of s with all replacements performed.
+</p>
+</div><div class="Documentation-typeMethod"><h4 tabindex="-1" id="Replacer.WriteString" data-kind="method" class="Documentation-typeMethodHeader">func (*Replacer) <a class="Documentation-source" href="https://go.googlesource.com/go/+/go1.16/src/strings/replace.go#101">WriteString</a> <a class="Documentation-idLink" href="#Replacer.WriteString">¶</a></h4>
+
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Replacer">Replacer</a>) WriteString(w <a href="/io">io</a>.<a href="/io#Writer">Writer</a>, s <a href="/builtin#string">string</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>WriteString writes s to w with all replacements performed.
+</p>
+</div></div></section><h3 tabindex="-1" id="pkg-notes" class="Documentation-notesHeader">Notes <a href="#pkg-notes">¶</a></h3>
+
+  <section class="Documentation-notes"><div class="Documentation-note">
+      <h3 tabindex="-1" id="pkg-note-BUG" class="Documentation-noteHeader">Bugs <a href="#pkg-note-BUG">¶</a></h3>
+      <ul class="Documentation-noteList" style="padding-left: 20px; list-style: initial;">
+<li style="margin: 6px 0 6px 0;"><div role="navigation" aria-label="Table of Contents">
+		<ul class="Documentation-toc"></ul>
+	</div><p>The rule Title uses for word boundaries does not handle Unicode punctuation properly.
+</p></li></ul>
+</div></section></div> 
+
+        
+      
+    </div>
+  </div>
+
+        
+      
+
+      
+        
+  <div class="UnitFiles js-unitFiles">
+    <h2 class="UnitFiles-title" id="section-sourcefiles">
+      <img height="16px" width="12px" src="/static/img/pkg-icon-file_16x12.svg" alt="">Source Files
+    </h2>
+    <div class="UnitFiles-titleLink">
+      <a href="https://go.googlesource.com/go/+/go1.16/src/strings" target="_blank" rel="noopener">View all</a>
+    </div>
+    <div>
+      <ul class="UnitFiles-fileList"><li>
+            <a href="https://go.googlesource.com/go/+/go1.16/src/strings/builder.go" target="_blank" rel="noopener" title="builder.go">builder.go</a>
+          </li><li>
+            <a href="https://go.googlesource.com/go/+/go1.16/src/strings/compare.go" target="_blank" rel="noopener" title="compare.go">compare.go</a>
+          </li><li>
+            <a href="https://go.googlesource.com/go/+/go1.16/src/strings/reader.go" target="_blank" rel="noopener" title="reader.go">reader.go</a>
+          </li><li>
+            <a href="https://go.googlesource.com/go/+/go1.16/src/strings/replace.go" target="_blank" rel="noopener" title="replace.go">replace.go</a>
+          </li><li>
+            <a href="https://go.googlesource.com/go/+/go1.16/src/strings/search.go" target="_blank" rel="noopener" title="search.go">search.go</a>
+          </li><li>
+            <a href="https://go.googlesource.com/go/+/go1.16/src/strings/strings.go" target="_blank" rel="noopener" title="strings.go">strings.go</a>
+          </li></ul>
+    </div>
+  </div>
+
+      
+      
+    </div>
+    <div class="UnitDetails-meta" role="complementary" aria-label="links">
+      
+  
+  <div class="UnitMetaDetails">
+    <div class="UnitMetaDetails-header">Details<a href="/about#best-practices-h2">Learn more</a></div>
+    <ul>
+      <li>
+        
+  <img class="UnitMetaDetails-icon"src="/static/img/pkg-icon-checkCircleOutline_24x24.svg" alt="checked"height="24" width="24">
+
+        Valid <a href="https://go.googlesource.com/go/+/go1.16/src/go.mod" target="_blank">go.mod</a> file
+        
+  <span class="UnitMetaDetails-toggletip">
+    <button type="button" aria-label="more info" data-toggletip-content="The Go module system was introduced in Go 1.11 and is the official dependency management solution for Go.">
+      <img class="UnitMetaDetails-icon" src="/static/img/pkg-icon-help_24x24.svg" alt="" height="24" width="24">
+    </button>
+    <span role="status"></span>
+  </span>
+
+      </li>
+      <li>
+        
+  <img class="UnitMetaDetails-icon"src="/static/img/pkg-icon-checkCircleOutline_24x24.svg" alt="checked"height="24" width="24">
+
+        Redistributable license
+        
+  <span class="UnitMetaDetails-toggletip">
+    <button type="button" aria-label="more info" data-toggletip-content="Redistributable licenses place minimal restrictions on how software can be used, modified, and redistributed.">
+      <img class="UnitMetaDetails-icon" src="/static/img/pkg-icon-help_24x24.svg" alt="" height="24" width="24">
+    </button>
+    <span role="status"></span>
+  </span>
+
+      </li>
+      <li>
+        
+  <img class="UnitMetaDetails-icon"src="/static/img/pkg-icon-checkCircleOutline_24x24.svg" alt="checked"height="24" width="24">
+
+        Tagged version
+        
+  <span class="UnitMetaDetails-toggletip">
+    <button type="button" aria-label="more info" data-toggletip-content="Modules with tagged versions give importers more predictable builds.">
+      <img class="UnitMetaDetails-icon" src="/static/img/pkg-icon-help_24x24.svg" alt="" height="24" width="24">
+    </button>
+    <span role="status"></span>
+  </span>
+
+      </li>
+      <li>
+        
+  <img class="UnitMetaDetails-icon"src="/static/img/pkg-icon-checkCircleOutline_24x24.svg" alt="checked"height="24" width="24">
+
+        Stable version
+        
+  <span class="UnitMetaDetails-toggletip">
+    <button type="button" aria-label="more info" data-toggletip-content="When a project reaches major version v1 it is considered stable.">
+      <img class="UnitMetaDetails-icon" src="/static/img/pkg-icon-help_24x24.svg" alt="" height="24" width="24">
+    </button>
+    <span role="status"></span>
+  </span>
+
+      </li>
+    </ul>
+  </div>
+
+  <div class="UnitMeta">
+    <div class="UnitMeta-header">Repository</div>
+    
+      <a href="https://go.googlesource.com/go" title="https://go.googlesource.com/go" target="_blank" rel="noopener">
+        https://go.googlesource.com/go
+      </a>
+    
+    
+    
+  
+
+    
+  
+
+    
+  
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+  <dialog class="JumpDialog Dialog">
+    <h2 class="Dialog-title">Jump to</h2>
+    <form method="dialog">
+      <div class="JumpDialog-filter">
+        <input class="JumpDialog-input" autocomplete="off" type="text">
+      </div>
+      <div class="JumpDialog-body">
+        <div class="JumpDialog-list"></div>
+      </div>
+      <div class="Dialog-actions">
+        <button class="Dialog-button">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="ShortcutsDialog Dialog">
+    <h2 class="Dialog-title">Keyboard shortcuts</h2>
+    <table>
+      <tbody>
+        <tr><td class="ShortcutsDialog-key"><b>?</b></td><td> : This menu</td></tr>
+        <tr><td class="ShortcutsDialog-key"><b>/</b></td><td> : Search site</td></tr>
+        <tr><td class="ShortcutsDialog-key"><b>f</b> or <b>F</b></td><td> : Jump to</td></tr>
+      </tbody>
+    </table>
+    <form method="dialog">
+      <div class="Dialog-actions">
+        <button class="Dialog-button">Close</button>
+      </div>
+    </form>
+  </dialog>
+</div>
+<footer class="Site-footer">
+  
+  <div class="Footer">
+    <div class="Footer-links">
+      <div class="Footer-linkColumn">
+        <a href="https://go.dev/solutions" class="Footer-link Footer-link--primary" title="Why Go">
+          Why Go
+        </a>
+        <a href="https://go.dev/solutions#use-cases" class="Footer-link" title="Use Cases">
+          Use Cases
+        </a>
+        <a href="https://go.dev/solutions#case-studies" class="Footer-link" title="Case Studies">
+          Case Studies
+        </a>
+      </div>
+      <div class="Footer-linkColumn">
+        <a href="https://learn.go.dev/" class="Footer-link Footer-link--primary" title="Getting Started">
+          Getting Started
+        </a>
+        <a href="https://play.golang.org" class="Footer-link" title="">
+          Playground
+        </a>
+        <a href="https://tour.golang.org" class="Footer-link" title="">
+          Tour
+        </a>
+        <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="Footer-link" title="">
+          Stack Overflow
+        </a>
+      </div>
+      <div class="Footer-linkColumn">
+        <a href="https://pkg.go.dev" class="Footer-link Footer-link--primary" title="Discover Packages">
+          Discover Packages
+        </a>
+      </div>
+      <div class="Footer-linkColumn">
+        <a href="https://go.dev/about" class="Footer-link Footer-link--primary" title="About">
+          About
+        </a>
+        <a href="https://golang.org/dl/" class="Footer-link" title="">
+          Download
+        </a>
+        <a href="https://blog.golang.org" class="Footer-link" title="">
+          Blog
+        </a>
+        <a href="https://golang.org/doc/devel/release.html" class="Footer-link" title="">
+          Release Notes
+        </a>
+        <a href="https://blog.golang.org/go-brand" class="Footer-link" title="">
+          Brand Guidelines
+        </a>
+        <a href="https://golang.org/conduct" class="Footer-link">
+          Code of Conduct
+        </a>
+      </div>
+      <div class="Footer-linkColumn">
+        <a href="https://www.twitter.com/golang" class="Footer-link Footer-link--primary" title="Connect">
+          Connect
+        </a>
+        <a href="https://www.twitter.com/golang" class="Footer-link" title="">
+          Twitter
+        </a>
+        <a href="https://github.com/golang" class="Footer-link" title="">
+          GitHub
+        </a>
+        <a href="https://invite.slack.golangbridge.org/" class="Footer-link" title="">
+          Slack
+        </a>
+        <a href="https://www.meetup.com/pro/go" class="Footer-link" title="">
+          Meetup
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="Footer">
+    <div class="Container Container--fullBleed">
+      <div class="Footer-bottom">
+        <img class="Footer-gopher" loading="lazy" src="/static/img/pilot-bust.svg" alt="Gopher in flight goggles">
+        <ul class="Footer-listRow">
+          <li class="Footer-listItem"><a href="https://go.dev/copyright">Copyright</a></li>
+          <li class="Footer-listItem"><a href="https://go.dev/tos">Terms of Service</a></li>
+          <li class="Footer-listItem"><a href="http://www.google.com/intl/en/policies/privacy/" target="_blank" rel="noopener">Privacy
+              Policy</a></li>
+          <li class="Footer-listItem">
+            <a href="https://golang.org/s/pkgsite-feedback" target="_blank" rel="noopener">
+              Report an Issue
+            </a>
+          </li>
+          <li class="Footer-listItem"><a href="https://golang.org" target="_blank" rel="noopener">golang.org</a></li>
+        </ul>
+        <a class="Footer-googleLogo" href="https://google.com" target="_blank" rel="noopener">
+          <img class="Footer-googleLogoImg" loading="lazy" src="/static/img/google-white.png" alt="Google logo">
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function loadScript(src, props = {}) {
+    let s = document.createElement('script');
+    s.src = src;
+    for (const [k, v] of Object.entries(props)) {
+      s[k] = v
+    }
+    document.head.appendChild(s);
+  }
+  loadScript('/static/js/web-vitals.js', {type: 'module', defer: true});
+  loadScript("/static/js/base.min.js");
+
+  if (document.querySelector('.js-gtmID').dataset.gtmid && window.dataLayer) {
+    window.dataLayer.push(function() {
+      loadScript('/static/js/utm_source.js', {type: 'module', async: true, defer: true})
+    })
+  } else {
+    loadScript('/static/js/utm_source.js', {type: 'module', async: true, defer: true})
+  }
+</script>
+
+
+  <div class="js-canonicalURLPath" data-canonical-url-path="/strings@go1.16" hidden />
+  <script>
+    loadScript('/static/js/keyboard.js', {type: 'module', async: true, defer: true})
+    loadScript('/static/js/unit.js', {type: 'module', async: true, defer: true})
+    loadScript('/static/js/unit_fixed_header.js', {type: 'module', async: true, defer: true})
+  </script>
+  
+  <script>
+    loadScript("/static/js/jump.min.js", {async: true, defer: true});
+  </script>
+  <script>
+    loadScript("/static/js/playground.js", {type: 'module', async: true, defer: true});
+  </script>
+  <script>
+    loadScript('/static/js/sidenav.js', {type: 'module', async: true, defer: true})
+  </script>
+
+
+
+
+<script async>
+  const gtmId = document.querySelector('.js-gtmID').dataset.gtmid; // this will throw if the querySelector can’t find the element
+  if (!gtmId) {
+    throw new Error('Google Tag Manager ID not found');
+  }
+  loadScript(`https://www.googletagmanager.com/gtm.js?id=${gtmId}`);
+</script>
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+          height="0" width="0" style="display:none;visibility:hidden">
+  </iframe>
+</noscript>
+
