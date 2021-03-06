@@ -208,7 +208,7 @@ func (q *Query) Selector() string {
 				buff.WriteString(f)
 			}
 		default:
-			fmt.Fprintf(&buff, "[%s=%q]", key, val)
+			fmt.Fprintf(&buff, "[%s=%s]", key, val)
 		}
 	}
 	return buff.String()
